@@ -6,7 +6,7 @@ Welcome to the official website repository for **Shree Sainath Packaging**, a le
 
 ## 🔧 Project Overview
 
-This website is being developed as a personal project by [Arya Sharma](https://github.com/your-github-username), a web developer at **Calanjiyam Consulting Technologies**, to digitize and expand the online presence of **Shree Sainath Packaging**, a family-owned business.
+This website is being developed as a personal project by **Arya Sharma**, a web developer at **Calanjiyam Consulting Technologies**, to build a professional online presence for **Shree Sainath Packaging**, a family-owned business specializing in a complete range of packaging solutions.
 
 ---
 
@@ -24,11 +24,17 @@ This website is being developed as a personal project by [Arya Sharma](https://g
 
 ## 🌐 Technologies Used
 
-- HTML5 / CSS3 / JavaScript
-- React.js (or your framework of choice)
-- TailwindCSS / Bootstrap (if used)
-- Node.js / Express (if backend needed)
-- Firebase / Vercel / Netlify (for deployment - update accordingly)
+- **Frontend:**
+  - HTML5
+  - CSS3
+  - JavaScript
+  - AJAX
+
+- **Backend:**
+  - PHP
+
+- **Database:**
+  - MySQL
 
 ---
 
@@ -38,11 +44,7 @@ This website is being developed as a personal project by [Arya Sharma](https://g
 # Clone the repository
 git clone https://github.com/your-username/shree-sainath-packaging.git
 
-# Navigate to the project directory
+# Move to the project directory
 cd shree-sainath-packaging
 
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
+# Open in your local server environment (e.g., XAMPP or WAMP)
