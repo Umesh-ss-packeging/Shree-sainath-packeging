@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us Shree Sainath Packeging</title>
+    <link rel="shortcut icon" href="../assets/logo1.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #c41e3a;
+            --secondary-red: #8b0000;
+            --primary-brown: #8b4513;
+            --secondary-brown: #654321;
+            --light-brown: #f5f0e6;
+            --text-dark: #2c1810;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-brown);
+            /* Removed max-width and padding from body, will be handled by container */
+        }
+
+        .container {
+            max-width: 1200px; /* Reverted to a wider container */
+            margin: 0 auto; /* Center the container */
+            padding: 40px 20px; /* Padding inside the container */
+            /* Removed background-color and box-shadow from container, will be handled by sections */
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1); /* Red-toned shadow */
+            border: 1px solid rgba(139, 0, 0, 0.1); /* Subtle red-toned border */
+        }
+
+        h1 {
+            color: var(--primary-red);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: var(--primary-brown);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-red); /* Red underline */
+            padding-bottom: 10px;
+            text-align: left; /* Revert to left-aligned */
+            position: static; /* Remove relative positioning */
+        }
+
+        h2:after {
+            content: none; /* Remove pseudo-element line under h2 */
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: var(--text-dark);
+        }
+
+        .values-list {
+            list-style: none;
+            padding-left: 20px; /* Standard padding for lists */
+            display: block; /* Default block display */
+            text-align: left;
+        }
+
+        .values-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.1em;
+        }
+
+        .values-list li:before {
+            content: "•";
+            color: var(--primary-red); /* Red bullet points */
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--primary-brown); /* Brown for strong text */
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 8px rgba(139, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>About Us</h1>
+            <p>Founded in 2007 in Indore, Madhya Pradesh, Shree Sainath Packaging is a trusted manufacturer of high-quality packaging solutions. With over a decade of experience, we specialize in BOPP bags, woven sack bags, and non-woven bags, catering to a wide range of industrial and commercial packaging needs.</p>
+            <p>Our focus on quality, durability, and client satisfaction has made us a reliable partner for businesses across sectors. Despite being a small team, we deliver big results through commitment, craftsmanship, and attention to detail.</p>
+        </div>
+
+        <div class="section">
+            <h2>What We Strive For</h2>
+            <p>At Shree Sainath Packaging, we are driven by a deep commitment to helping businesses pack their products with confidence. Every bag we manufacture is a result of careful material selection, precision manufacturing, and a dedication to consistency.</p>
+            <p>We believe packaging is more than just wrapping — it's about protecting value, representing a brand, and making a lasting impression. Our goal is to deliver solutions that not only meet practical needs but also enhance the identity and trust our clients build with their customers.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Vision</h2>
+            <p>To become a leading name in the Indian packaging industry by continuously innovating, expanding our product range, and building long-term relationships with our customers through trust and excellence.</p>
+            <p>To be recognized for our contribution to responsible manufacturing and our commitment to creating packaging solutions that are both efficient and environmentally conscious.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Values</h2>
+            <ul class="values-list">
+                <li><strong>Integrity:</strong> We conduct business with honesty and transparency.</li>
+                <li><strong>Quality:</strong> We never compromise on the standards of our products.</li>
+                <li><strong>Customer Commitment:</strong> We go the extra mile to exceed customer expectations.</li>
+                <li><strong>Innovation:</strong> We embrace change and continuously improve our offerings.</li>
+                <li><strong>Sustainability:</strong> We strive for eco-friendly practices in every aspect of our work.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
