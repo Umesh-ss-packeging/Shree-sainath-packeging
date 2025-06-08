@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Shree Sainath Packaging</title>
+  <!-- Import Rubik font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* =========================
+       CSS VARIABLES & BASE STYLES
+    ============================ */
+    :root {
+      --brown: #a36600; /* Primary brown */
+      --brown-dark: #7a4d00;
+      --white: #fff;
+      --input-bg: #e9eef6;
+      --input-focus: #fff7e6;
+      --input-border: #c9a76a;
+      --input-border-focus: #a36600;
+      --input-shadow: 0 0 0 2px #a3660033;
+      --input-shadow-strong: 0 0 0 3px #a3660055;
+      --text: #222;
+      --placeholder: #888;
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+      --established-hover: #ffe5b4;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Rubik', Arial, sans-serif;
+      background: var(--brown);
+      color: var(--text);
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* =========================
+       MAIN LAYOUT
+    ============================ */
+    .contact-main-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1800px;
+      gap: 0;
+      padding: 40px 0;
+      box-sizing: border-box;
+      min-height: 80vh;
+    }
+    /* =========================
+       LEFT: CONTACT INFO BLOCK
+    ============================ */
+    .contact-info-block {
+      flex: 1 1 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background: transparent;
+      color: var(--white);
+      font-size: 1.45rem;
+      font-weight: 400;
+      max-width: 800px;
+      min-width: 520px;
+      padding: 0 60px 0 0;
+      justify-content: flex-start;
+      height: 100%;
+    }
+    .contact-info-inner {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 48px;
+    }
+    .contact-info-block h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0 0 36px 0;
+      letter-spacing: 0.5px;
+      color: var(--white);
+      align-self: flex-start;
+    }
+    .contact-info-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 2.2em;
+      width: 100%;
+    }
+    .contact-info-label {
+      font-weight: 700;
+      font-size: 1.18em;
+      margin-bottom: 0.2em;
+      margin-top: 0;
+      letter-spacing: 0.01em;
+      align-self: flex-start;
+    }
+    .contact-info-value {
+      font-weight: 400;
+      font-size: 1.13em;
+      margin-bottom: 0;
+      margin-left: 0;
+      word-break: break-all;
+      align-self: flex-start;
+    }
+    .contact-social-row {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 32px;
+      margin: 2.2em 0 0.8em 0;
+    }
+    .contact-social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--white);
+      font-size: 2.3rem;
+      transition: transform 0.18s cubic-bezier(.4,1.4,.6,1), box-shadow 0.18s, background 0.18s, color 0.18s;
+      box-shadow: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .contact-social-icon:hover,
+    .contact-social-icon:focus {
+      transform: scale(1.13) rotate(-6deg);
+      background: var(--white);
+      color: var(--brown);
+      box-shadow: 0 4px 16px rgba(163,102,0,0.18);
+    }
+    .established {
+      margin-top: 2.2em;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      text-align: left;
+      width: 100%;
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 0;
+      margin-right: 0;
+      margin-left: 0;
+      align-self: flex-start;
+      box-sizing: border-box;
+      transition: color 0.2s, background 0.2s;
+    }
+    .established:hover, .established:focus {
+      color: #ffe5b4;
+      background: #a3660022;
+    }
+    /* =========================
+       RIGHT: CONTACT FORM
+    ============================ */
+    .contact-form-card {
+      flex: 1 1 1200px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 48px 120px 48px 120px;
+      max-width: 1200px;
+      min-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      position: relative;
+      z-index: 2;
+      animation: fadeInCard 1.2s cubic-bezier(.4,1.4,.6,1) 0.3s both;
+      opacity: 0;
+      justify-content: center;
+      min-height: 520px;
+    }
+    @keyframes fadeInCard {
+      to { opacity: 1; }
+    }
+    .contact-form-card h3,
+    .contact-form-card p {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--brown);
+      text-align: center;
+      margin-bottom: 0.3em;
+      letter-spacing: 0.5px;
+    }
+    .contact-form-card p {
+      margin-bottom: 2.2em;
+      font-weight: 700;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group label {
+      font-size: 1.18rem;
+      font-weight: 500;
+      color: var(--brown-dark);
+      margin-bottom: 2px;
+    }
+    .form-group input,
+    .form-group textarea {
+      font-family: inherit;
+      font-size: 1.18rem;
+      padding: 20px 20px;
+      border: 2px solid var(--input-border);
+      border-radius: 12px;
+      background: var(--input-bg);
+      color: var(--text);
+      transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
+      outline: none;
+      resize: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .form-group input:hover,
+    .form-group textarea:hover {
+      border-color: var(--brown-dark);
+      box-shadow: var(--input-shadow-strong);
+      background: #fffbe9;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      background: var(--input-focus);
+      box-shadow: var(--input-shadow-strong);
+      border-color: var(--brown);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--placeholder);
+      opacity: 1;
+      font-size: 1.13rem;
+    }
+    .contact-form button {
+      margin-top: 18px;
+      padding: 18px 0;
+      background: var(--brown);
+      color: var(--white);
+      font-size: 1.25rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(163,102,0,0.10);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.5px;
+      width: 180px;
+      align-self: center;
+    }
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background: var(--brown-dark);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 4px 16px rgba(163,102,0,0.18);
+    }
+    /* =========================
+       RESPONSIVE DESIGN
+    ============================ */
+    @media (max-width: 1400px) {
+      .contact-info-block {
+        max-width: 600px;
+        min-width: 400px;
+      }
+      .contact-info-inner {
+        max-width: 500px;
+      }
+      .contact-form-card {
+        max-width: 900px;
+        min-width: 400px;
+        padding: 32px 32px 32px 32px;
+      }
+    }
+    @media (max-width: 1200px) {
+      .contact-main-wrapper {
+        max-width: 100vw;
+      }
+      .contact-info-block {
+        max-width: 420px;
+        min-width: 320px;
+        padding-right: 20px;
+      }
+      .contact-info-inner {
+        max-width: 100vw;
+      }
+      .contact-form-card {
+        max-width: 700px;
+        min-width: 320px;
+        padding: 32px 24px 32px 24px;
+      }
+    }
+    @media (max-width: 900px) {
+      .contact-main-wrapper {
+        gap: 0;
+        padding: 24px 0;
+      }
+      .contact-info-block {
+        padding-right: 0;
+      }
+      .contact-form-card {
+        padding: 24px 8px 24px 8px;
+      }
+    }
+    @media (max-width: 768px) {
+      .contact-main-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px 0;
+        max-width: 100vw;
+      }
+      .contact-info-block, .contact-form-card {
+        max-width: 100vw;
+        width: 100%;
+        margin: 0 auto;
+        min-width: 0;
+      }
+      .contact-info-block {
+        align-items: flex-start;
+        padding: 0 12px;
+      }
+      .contact-info-inner {
+        align-items: flex-start;
+        max-width: 100vw;
+        margin-top: 0;
+      }
+      .contact-form-card {
+        padding: 16px 2vw 16px 2vw;
+        min-width: 0;
+      }
+      .contact-social-row {
+        justify-content: flex-start;
+      }
+      .established {
+        padding-left: 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .contact-info-block h2,
+      .contact-form-card h3 {
+        font-size: 1.3rem;
+      }
+      .contact-info-block {
+        font-size: 1rem;
+      }
+      .contact-form-card {
+        padding: 10px 1vw 10px 1vw;
+      }
+      .contact-social-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+      .form-group label, .form-group input, .form-group textarea, .form-group input::placeholder, .form-group textarea::placeholder {
+        font-size: 1rem;
+      }
+      .contact-form button {
+        font-size: 1rem;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="contact-main-wrapper">
+      <!-- =========================
+           LEFT: CONTACT INFO BLOCK
+      ============================ -->
+      <section class="contact-info-block" aria-labelledby="contact-heading">
+        <div class="contact-info-inner">
+          <h2 id="contact-heading">Contact</h2>
+          <div class="contact-info-group">
+            <div class="contact-info-label">Phone:</div>
+            <div class="contact-info-value">+91 98765XXXXX</div>
+          </div>
+          <div class="contact-info-group">
+            <div class="contact-info-label">Mail:</div>
+            <div class="contact-info-value">shreesainathpackaging722@gmail.com</div>
+          </div>
+          <div class="contact-info-group">
+            <div class="contact-info-label">Address:</div>
+            <div class="contact-info-value">XYZ street, Indore</div>
+          </div>
+          <div class="contact-social-row">
+            <!-- WhatsApp Bootstrap Icon -->
+            <a class="contact-social-icon" href="https://wa.link/xe7urx" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <!-- Instagram Bootstrap Icon -->
+            <a class="contact-social-icon" href="https://www.instagram.com/shreesainathpackeging/?igsh=NnI3cXM3aWkyZ2Qy" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+          <div class="established">Established in 2007</div>
+        </div>
+      </section>
+      <!-- =========================
+           RIGHT: CONTACT FORM
+      ============================ -->
+      <section class="contact-form-card" aria-labelledby="form-heading">
+        <h3 id="form-heading">Send us a message</h3>
+        <p>and we'll get back to you shortly.</p>
+        <form class="contact-form" id="contactForm" autocomplete="off" novalidate>
+          <div class="form-group">
+            <label for="name">Name<span style="color: #d00;">*</span></label>
+            <input type="text" id="name" name="name" placeholder="e.g., John Doe" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="email">Email<span style="color: #d00;">*</span></label>
+            <input type="email" id="email" name="email" placeholder="e.g., email@example.com" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number<span style="color: #d00;">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g., +91 98765XXXXX" required aria-required="true" pattern="[+0-9 ]{10,20}">
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message<span style="color: #d00;">*</span></label>
+            <textarea id="message" name="message" placeholder="Enter text here" required aria-required="true"></textarea>
+          </div>
+          <button type="submit" id="sendBtn">Send</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script>
+    // Fade-in for contact form card
+    window.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.contact-form-card').style.opacity = '1';
+    });
+    // Contact form validation and interaction
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simple validation
+      let valid = true;
+      form.querySelectorAll('input, textarea').forEach(input => {
+        if (!input.value.trim()) {
+          input.style.boxShadow = '0 0 0 2px #d00';
+          valid = false;
+        } else {
+          input.style.boxShadow = '';
+        }
+      });
+      if (!valid) return;
+      // Simulate form submission (replace with AJAX if needed)
+      form.reset();
+      alert('Thank you for contacting us! We will get back to you soon.');
+    });
+    // Remove error highlight on input
+    form.querySelectorAll('input, textarea').forEach(input => {
+      input.addEventListener('input', function() {
+        input.style.boxShadow = '';
+      });
+    });
+  </script>
+</body>
+</html>
