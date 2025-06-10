@@ -405,6 +405,23 @@
         width: 100%;
       }
     }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 8px;
+      color: var(--white);
+      text-decoration: none;
+      transition: transform 0.2s, color 0.2s;
+    }
+    
+    .map-link i {
+      font-size: 1.2em;
+    }
+    
+    .map-link:hover {
+      color: #ffe5b4;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -437,7 +454,12 @@
               <i class="bi bi-geo-alt-fill"></i>
               Address:
             </div>
-            <div class="contact-info-value">XYZ street, Indore</div>
+            <div class="contact-info-value">
+              XYZ street, Indore
+              <a href="https://maps.app.goo.gl/m6TEtg5uBc5pSBem9" target="_blank" class="map-link" aria-label="View location on Google Maps">
+                <i class="bi bi-pin-map-fill"></i>
+              </a>
+            </div>
           </div>
           <div class="contact-social-row">
             <!-- WhatsApp Bootstrap Icon -->
@@ -490,20 +512,65 @@
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      console.log('Form submitted');
+      
       // Simple validation
       let valid = true;
       form.querySelectorAll('input, textarea').forEach(input => {
         if (!input.value.trim()) {
           input.style.boxShadow = '0 0 0 2px #d00';
           valid = false;
+          console.log('Invalid field:', input.id);
         } else {
           input.style.boxShadow = '';
         }
       });
-      if (!valid) return;
-      // Simulate form submission (replace with AJAX if needed)
+      if (!valid) {
+        console.log('Form validation failed');
+        return;
+      }
+
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      console.log('Form data:', { name, email, phone, message });
+
+      // Create email subject and body
+      const subject = `New Contact Form Submission from ${name}`;
+      const body = `Dear Shree Sainath Packaging Team,
+
+A new contact form submission has been received:
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+
+Best regards,
+${name}`;
+
+      console.log('Email subject:', subject);
+      console.log('Email body:', body);
+
+      // Create and open mailto link
+      const mailtoLink = `mailto:shreesainathpackaging722@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      console.log('Mailto link:', mailtoLink);
+
+      try {
+        window.open(mailtoLink, '_blank');
+        console.log('Mailto link opened successfully in new tab');
+      } catch (error) {
+        console.error('Error opening mailto link:', error);
+      }
+
+      // Reset form
       form.reset();
-      alert('Thank you for contacting us! We will get back to you soon.');
+      console.log('Form reset');
     });
     // Remove error highlight on input
     form.querySelectorAll('input, textarea').forEach(input => {
