@@ -193,23 +193,52 @@
             }
 
             .section {
-                padding: 30px;
+                padding: 30px 20px;
+                margin-bottom: 30px;
             }
 
             h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+            }
+
+            h1::after {
+                width: 80px;
             }
 
             h2 {
-                font-size: 1.8em;
+                font-size: 1.6em;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+
+            p {
+                font-size: 1em;
+                margin-bottom: 15px;
+                line-height: 1.6;
             }
 
             .values-list {
                 grid-template-columns: 1fr;
+                gap: 15px;
+                padding-left: 0;
+            }
+
+            .values-list li {
+                padding: 15px 15px 15px 50px;
+                margin-bottom: 10px;
+            }
+
+            .values-list li i {
+                font-size: 1.3em;
+                left: 15px;
             }
 
             .section-icon {
                 font-size: 1.5em;
+                top: 15px;
+                right: 15px;
             }
             
             .scroll-to-top {
@@ -220,25 +249,37 @@
                 right: 20px;
             }
         }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            .section {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .values-list li {
+                padding: 12px 12px 12px 45px;
+            }
+
+            .values-list li i {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
-     <!-- ===========================
-       Navbar Section
-  ============================ -->
-  <header class="navbar">
-    <div class="logo">
-      <!-- Replace with actual logo path -->
-      <img src="assets/logo1.png" alt="Shree Sainath Packaging Logo" />
-    </div>
-    <nav class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../aboutus/index.html">About</a>
-      <a href="../products/index.html">Products</a>
-      <a href="../contact/index.html">Contact</a>
-    </nav>
-  </header>
-
+    
     <div class="container">
         <div class="section">
             <i class="fas fa-building section-icon"></i>
@@ -292,33 +333,7 @@
     <div class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-
-  <!-- ===========================
-       Footer Section
-  ============================ -->
-  <footer class="footer">
-    <div class="footer-left">
-      <h2>Contact Us</h2>
-      <p><strong>Phone:</strong> <a href="tel:+919826071684">+91 98260 71684</a></p>
-      <p><strong>Mail:</strong> <a href="mailto:shreesainathpackaging722@gmail.com">shreesainathpackaging722@gmail.com</a></p>
-      <p><a href="brochure.pdf" download>Company Brochure</a></p>
-    </div>
-
-    <div class="footer-right">
-      <div class="icons">
-        <!-- Replace YOUR_NUMBER and PROFILE with real links -->
-        <a href="https://api.whatsapp.com/send?phone=919826071684" target="_blank"><img src="assets/wa.png" alt="WhatsApp" /></a>
-        <a href="https://www.instagram.com/shreesainathpackeging?igsh=NnI3cXM3aWkyZ2Qy" target="_blank"><img src="assets/ig.png" alt="Instagram" /></a>
-      </div>
-      <div class="address">
-        <p><strong>Address:</strong><br><a href="#">XYZ Street, Indore</a></p>
-      </div>
-      <div class="established">
-        <p>Established 2007</p>
-      </div>
-    </div>
-  </footer>
-    <script>
+<script>
         // Scroll to top functionality
         const scrollToTop = document.querySelector('.scroll-to-top');
         
