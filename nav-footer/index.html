@@ -62,7 +62,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0px 80px; 
+      padding: 0px 80px;
       background-color: var(--primary-color);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       position: sticky;
@@ -125,7 +125,7 @@
       font-size: 24px;
       margin-left: 15px;
       color: var(--footer-text);
-    }  
+    }
 
     .established {
       margin-top: 20px;
@@ -144,37 +144,37 @@
     }
 
     .hamburger {
-  width: 30px;
-  height: 22px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1100;
-  margin: 0px 15px;
-}
+      width: 30px;
+      height: 22px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+      margin: 0px 15px;
+    }
 
-.hamburger .bar {
-  height: 2px;
-  width: 80%;
-  background-color: var(--text-color);
-  transition: 0.4s;
-  border-radius: 2px;
-  margin: 5px;
-}
+    .hamburger .bar {
+      height: 2px;
+      width: 80%;
+      background-color: var(--text-color);
+      transition: 0.4s;
+      border-radius: 2px;
+      margin: 5px;
+    }
 
-/* Animate into X when active */
-.hamburger.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
+    /* Animate into X when active */
+    .hamburger.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
 
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
-}
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
 
-.hamburger.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
+    .hamburger.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
 
     /* Responsive nav styles */
@@ -219,28 +219,27 @@
       }
 
 
-    .footer {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 30px 20px;
-    }
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+      }
 
-    .footer-right {
-      align-items: flex-start;
-      text-align: left;
-      margin-top: 20px;
-    }
+      .footer-right {
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 20px;
+      }
 
-    /*.footer .icons img {
+      /*.footer .icons img {
       margin-left: 0;
       margin-right: 15px;
     }*/
 
-    .icons a {
+      .icons a {
         margin: 0 15px 10px 0;
       }
-  }
-
+    }
   </style>
 </head>
 
@@ -252,13 +251,13 @@
   <header class="navbar">
 
     <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
 
     <div class="logo">
-      <img src="assets/logo1.png" alt="Shree Sainath Packaging Logo"  />
+      <img src="assets/logo1.png" alt="Shree Sainath Packaging Logo" />
     </div>
     <nav class="nav-links" id="navLinks">
       <a href="home.html">Home</a>
@@ -292,7 +291,8 @@
     <div class="footer-right">
       <div class="icons">
         <!-- Replace YOUR_NUMBER and PROFILE with real links -->
-        <a href="wa.link/xe7urx" target="_blank"><!--<img src="assets/wa.png" alt="WhatsApp" />--><i class="bi bi-whatsapp"></i></a>
+        <a href="wa.link/xe7urx" target="_blank"><!--<img src="assets/wa.png" alt="WhatsApp" />--><i
+            class="bi bi-whatsapp"></i></a>
         <a href="https://www.instagram.com/shreesainathpackeging?igsh=NnI3cXM3aWkyZ2Qy" target="_blank"><!--<img
             src="assets/ig.png" alt="Instagram" />--> <i class="bi bi-instagram"></i></a>
       </div>
@@ -309,14 +309,14 @@
        JavaScript Section
   ============================ -->
   <script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    const hamburger = document.getElementById("hamburger");
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
 
-    nav.classList.toggle("active");
-    hamburger.classList.toggle("active");
-  }
-</script>
+      nav.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    }
+  </script>
 
 
 </body>
