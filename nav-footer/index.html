@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Sainath Packaging</title>
+  <link rel="shortcut icon" href="../assets/logo1.ico" type="image/x-icon">
+  <!-- Google Fonts - Rubik -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Font for consistency 
+  <link href="https://fonts.google.com/specimen/Rubik" rel="stylesheet"> -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    /* ===========================
+       CSS Variables for Colors
+    ============================ */
+    :root {
+      --primary-color: #ffffff;
+      --accent-color: #e21006;
+      --text-color: #000000;
+      --footer-bg: #996300;
+      --footer-text: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===========================
+       Global Styles
+    ============================ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      color: var(--text-color);
+      background-color: var(--primary-color);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+     main {
+      padding: 60px 80px;
+      flex-grow: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===========================
+       Navbar Styles
+    ============================ */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 80px;
+      background-color: var(--primary-color);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .hamburger-line {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-color);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+    }
+
+    .nav-links a {
+      margin-left: 30px;
+      font-weight: 600;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    /* ===========================
+       Footer Styles
+    ============================ */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 40px 80px;
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+    }
+
+    .footer a {
+      color: var(--footer-text);
+      text-decoration: underline;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer a:hover {
+      opacity: 0.8;
+    }
+
+    .footer-left h2 {
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .footer .icons i {
+      font-size: 24px;
+      margin-left: 15px;
+      color: var(--footer-text);
+      transition: opacity 0.3s ease;
+    }
+
+    .footer .icons i:hover {
+      opacity: 0.8;
+    }
+
+    .established {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* ===========================
+       Responsive Design (≤768px)
+    ============================ */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 20px;
+        position: relative;
+      }
+
+      .hamburger {
+        display: block;
+        z-index: 1001;
+      }
+
+      .hamburger.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 30px 30px 30px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        margin: 15px 0;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-color);
+        padding-left: 10px;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+      }
+
+      .footer-right {
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .footer .icons i {
+        margin-left: 0;
+        margin-right: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===========================
+       Navbar Section
+  ============================ -->
+  <header class="navbar">
+    <div class="logo">
+      <!-- Replace with actual logo path -->
+      <img src="assets/logo1.png" alt="Shree Sainath Packaging Logo" />
+    </div>
+    <div class="hamburger">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../aboutus/index.html">About</a>
+      <a href="../products/index.html">Products</a>
+      <a href="../contact/index.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Content Placeholder
+  ============================ -->
+  <main style="padding: 60px 80px;">
+    <h1 style="font-size: 2rem;">Welcome to Shree Sainath Packaging</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsam voluptatem soluta possimus dolores totam a dignissimos rem! Dolor iste sit amet praesentium a magni minima voluptatibus. Ipsam, illum non!</p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+  ============================ -->
+  <footer class="footer">
+    <div class="footer-left">
+      <h2>Contact Us</h2>
+      <p><strong>Phone:</strong> <a href="tel:+919826071684">+91 98260 71684</a></p>
+      <p><strong>Mail:</strong> <a href="mailto:shreesainathpackaging722@gmail.com">shreesainathpackaging722@gmail.com</a></p>
+      <p><a href="../assets/company brochure ss packaging.docx" download>Company Brochure</a></p>
+    </div>
+
+    <div class="footer-right">
+      <div class="icons">
+        <a href="https://api.whatsapp.com/send?phone=919826071684" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.instagram.com/shreesainathpackeging?igsh=NnI3cXM3aWkyZ2Qy" target="_blank"><i class="bi bi-instagram"></i></a>
+      </div>
+      <div class="address">
+        <p><strong>Address:</strong><br><a href="#">XYZ Street, Indore</a></p>
+      </div>
+      <div class="established">
+        <p style="margin: 0;">Established 2007</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+  ============================ -->
+  <script>
+    // ===========================
+    // Mobile Navigation Functionality
+    // ===========================
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+
+    // Toggle mobile menu
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    navLinksItems.forEach(item => {
+      item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
