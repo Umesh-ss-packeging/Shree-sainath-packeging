@@ -28,7 +28,121 @@
       --placeholder: #888;
       --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
       --established-hover: #ffe5b4;
+      --accent-color: var(--brown-dark);
     }
+
+    /* ===========================
+       Navbar Styles
+    ============================ */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 80px;
+      background-color: var(--white);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .hamburger-line {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+    }
+
+    .nav-links a {
+      margin-left: 30px;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.3s ease;
+      text-decoration: none !important;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 20px;
+        position: relative;
+      }
+
+      .hamburger {
+        display: block;
+        z-index: 1001;
+      }
+
+      .hamburger.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 30px 30px 30px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        margin: 15px 0;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-decoration: none !important;
+      }
+
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-color);
+        padding-left: 10px;
+        text-decoration: none !important;
+      }
+    }
+
     html, body {
       height: 100%;
       margin: 0;
@@ -42,9 +156,17 @@
     body {
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
+      padding-top: 60px; /* Adjust based on header height */
     }
+
     /* =========================
        MAIN LAYOUT
     ============================ */
@@ -205,7 +327,7 @@
       box-shadow: var(--shadow);
       border-radius: 16px;
       padding: 24px 60px;
-      max-width: 800px;
+      max-width: 600px;
       min-width: 400px;
       width: 100%;
       margin: 0 auto;
@@ -217,7 +339,7 @@
       animation: fadeInCard 1.2s cubic-bezier(.4,1.4,.6,1) 0.3s both;
       opacity: 0;
       justify-content: center;
-      min-height: 400px;
+      min-height: 350px;
     }
     @keyframes fadeInCard {
       to { opacity: 1; }
@@ -405,9 +527,46 @@
         width: 100%;
       }
     }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 8px;
+      color: var(--white);
+      text-decoration: none;
+      transition: transform 0.2s, color 0.2s;
+    }
+    
+    .map-link i {
+      font-size: 1.2em;
+    }
+    
+    .map-link:hover {
+      color: #ffe5b4;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
+  <!-- ===========================
+       Navbar Section
+  ============================ -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="../nav-footer/assets/logo1.png" alt="Shree Sainath Packaging Logo" />
+    </div>
+    <div class="hamburger">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../aboutus/index.html">About</a>
+      <a href="../products/index.html">Products</a>
+      <a href="index.html">Contact</a>
+    </nav>
+  </header>
+
   <main>
     <div class="contact-main-wrapper">
       <!-- =========================
@@ -437,7 +596,12 @@
               <i class="bi bi-geo-alt-fill"></i>
               Address:
             </div>
-            <div class="contact-info-value">XYZ street, Indore</div>
+            <div class="contact-info-value">
+              XYZ street, Indore
+              <a href="https://maps.app.goo.gl/m6TEtg5uBc5pSBem9" target="_blank" class="map-link" aria-label="View location on Google Maps">
+                <i class="bi bi-pin-map-fill"></i>
+              </a>
+            </div>
           </div>
           <div class="contact-social-row">
             <!-- WhatsApp Bootstrap Icon -->
@@ -450,15 +614,14 @@
             </a>
           </div>
           <div class="established">Established in 2007</div>
-          <a href="#" target="_blank" class="brochure-link">Company Brochure</a>
+          <a href="../assets/company brochure ss packaging.docx" download class="brochure-link">Company Brochure</a>
         </div>
       </section>
       <!-- =========================
            RIGHT: CONTACT FORM
       ============================ -->
       <section class="contact-form-card" aria-labelledby="form-heading">
-        <h3 id="form-heading">Send us a message</h3>
-        <p>and we'll get back to you shortly.</p>
+        <h3 id="form-heading">Send us a message and <br> we'll get back to you shortly.</h3>
         <form class="contact-form" id="contactForm" autocomplete="off" novalidate>
           <div class="form-group">
             <label for="name">Name<span style="color: #d00;">*</span></label>
@@ -481,7 +644,25 @@
       </section>
     </div>
   </main>
+
   <script>
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+
     // Fade-in for contact form card
     window.addEventListener('DOMContentLoaded', function() {
       document.querySelector('.contact-form-card').style.opacity = '1';
@@ -490,20 +671,65 @@
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      console.log('Form submitted');
+      
       // Simple validation
       let valid = true;
       form.querySelectorAll('input, textarea').forEach(input => {
         if (!input.value.trim()) {
           input.style.boxShadow = '0 0 0 2px #d00';
           valid = false;
+          console.log('Invalid field:', input.id);
         } else {
           input.style.boxShadow = '';
         }
       });
-      if (!valid) return;
-      // Simulate form submission (replace with AJAX if needed)
+      if (!valid) {
+        console.log('Form validation failed');
+        return;
+      }
+
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      console.log('Form data:', { name, email, phone, message });
+
+      // Create email subject and body
+      const subject = `New Contact Form Submission from ${name}`;
+      const body = `Dear Shree Sainath Packaging Team,
+
+A new contact form submission has been received:
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+
+Best regards,
+${name}`;
+
+      console.log('Email subject:', subject);
+      console.log('Email body:', body);
+
+      // Create and open mailto link
+      const mailtoLink = `mailto:shreesainathpackaging722@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      console.log('Mailto link:', mailtoLink);
+
+      try {
+        window.open(mailtoLink, '_blank');
+        console.log('Mailto link opened successfully in new tab');
+      } catch (error) {
+        console.error('Error opening mailto link:', error);
+      }
+
+      // Reset form
       form.reset();
-      alert('Thank you for contacting us! We will get back to you soon.');
+      console.log('Form reset');
     });
     // Remove error highlight on input
     form.querySelectorAll('input, textarea').forEach(input => {
