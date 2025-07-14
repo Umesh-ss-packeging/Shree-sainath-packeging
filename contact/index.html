@@ -96,9 +96,13 @@
         z-index: 1001;
       }
       .nav-links {
+        display: none;
+      }
+      .nav-links.active {
+        display: flex;
         position: fixed;
         top: 0;
-        right: -250px;
+        right: 0;
         width: 250px;
         height: 100vh;
         background-color: var(--white);
@@ -108,9 +112,6 @@
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
         z-index: 1000;
-      }
-      .nav-links.active {
-        right: 0;
       }
       .nav-links a {
         margin: 15px 0;
@@ -596,6 +597,15 @@
       color: #ffe5b4;
       transform: scale(1.1);
     }
+    .hamburger.active .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
   </style>
 </head>
 <body>
@@ -649,7 +659,7 @@
               Address:
             </div>
             <div class="contact-info-value">
-              XYZ street, Indore
+              Rau, Indore
               <a href="https://maps.app.goo.gl/m6TEtg5uBc5pSBem9" target="_blank" class="map-link" aria-label="View location on Google Maps">
                 <i class="bi bi-pin-map-fill"></i>
               </a>
