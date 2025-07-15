@@ -503,7 +503,7 @@
             </div>
         </div>
     </main>
-
+    <br>
     <!-- ===========================
          Footer Section
     ============================ -->
@@ -548,6 +548,20 @@
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
             }
+        });
+
+        // Add click event listeners to 'View Category' buttons
+        const categoryFiles = [
+            'categories/category1.html',
+            'categories/category2.html',
+            'categories/category3.html',
+            'categories/category4.html',
+            'categories/category5.html'
+        ];
+        document.querySelectorAll('.view-category-button').forEach((btn, idx) => {
+            btn.addEventListener('click', () => {
+                window.location.href = categoryFiles[idx];
+            });
         });
 
         // Console log to confirm page loaded successfully
