@@ -674,6 +674,27 @@
         margin-bottom: 28px;
       }
     }
+    .copyright-bar {
+        background: #000;
+        width: 100vw;
+        padding: 10px 0;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        /* Ensures full-bleed bar even if inside a container */
+    }
+    @media (max-width: 768px) {
+        .copyright-bar {
+            font-size: 13px;
+            padding: 10px 0;
+        }
+    }
   </style>
 </head>
 
@@ -807,6 +828,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===========================
+     Copyright Bar (Bottom Only)
+============================ -->
+<div class="copyright-bar">
+    © All rights reserved by Shree Sainath Packaging | Crafted by Arya Sharma and Charvi Joshi
+</div>
 
   <!-- ===========================
        JavaScript Section
