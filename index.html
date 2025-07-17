@@ -191,7 +191,7 @@
       display: block;
       box-shadow: 0 4px 24px rgba(0,0,0,0.10);
       background: #fff;
-      transition: transform 0.8s cubic-bezier(.4,2,.6,1), box-shadow 0.5s, filter 0.5s;
+      transition: transform 0.8s cubic-bezier(.4,2,.6,1), box-shadow 1.5s, filter 1.5s;
       filter: brightness(0.98) saturate(1.08) drop-shadow(0 2px 8px #e2100620);
       position: relative;
     }
@@ -237,15 +237,15 @@
     }
     .slideshow-dots {
       position: absolute;
-      bottom: 28px;
+      bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       gap: 18px;
     }
     .dot {
-      height: 16px;
-      width: 16px;
+      height: 10px;
+      width: 10px;
       background: linear-gradient(120deg, #fff 60%, #e2100620 100%);
       border: 2.5px solid #e21006;
       border-radius: 50%;
@@ -290,12 +290,12 @@
         height: 160px;
       }
       .slideshow-dots {
-        bottom: 8px;
+        bottom: 4px;
         gap: 7px;
       }
       .dot {
-        height: 8px;
-        width: 8px;
+        height: 6px;
+        width: 6px;
       }
     }
     /* ===========================
@@ -409,6 +409,271 @@
         bottom: 10px;
       }
     }
+
+    /* ===========================
+       Why Us Section Styles
+    ============================ */
+    .why-us-section {
+      background-color: #0052b4; /* Deep blue background */
+      padding: 60px 80px;
+      text-align: center;
+      margin-top: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transform: translateY(50px); /* Hidden by default */
+      opacity: 0; /* Hidden by default */
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+
+    .why-us-section.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .why-us-title {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .why-us-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+      justify-items: stretch;
+      align-items: stretch;
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: 520px; /* Ensures all boxes have equal height */
+    }
+    .why-us-box {
+      background-color: #fff;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .why-us-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .why-us-icon {
+      font-size: 48px;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+
+    .why-us-heading {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .why-us-desc {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .why-us-section {
+        padding: 40px 10px;
+      }
+      .why-us-grid {
+        gap: 18px;
+        min-height: 0;
+      }
+      .why-us-title {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .why-us-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        min-height: 0;
+      }
+      .why-us-box {
+        min-height: 120px;
+        padding: 20px 10px;
+      }
+    }
+    /* ===========================
+       Our Partners Section Styles
+    ============================ */
+    .partners-section {
+      background-color: #fff7e6; /* Soft gold/beige background */
+      padding: 60px 80px;
+      text-align: center;
+      margin-top: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transform: translateY(50px); /* Hidden by default */
+      opacity: 0; /* Hidden by default */
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+    .partners-section.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .partners-title {
+      font-size: 2.5rem;
+      color: #222;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    .partners-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+      justify-items: stretch;
+      align-items: stretch;
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: 520px; /* Match Why Us section */
+    }
+    .partner-box {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 30px 20px;
+      min-height: 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .partner-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .partner-name {
+      margin-top: 18px;
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 600;
+    }
+    @media (max-width: 900px) {
+      .partners-section {
+        padding: 40px 10px;
+      }
+      .partners-grid {
+        gap: 18px;
+        min-height: 0;
+      }
+      .partners-title {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .partners-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        min-height: 0;
+      }
+      .partner-box {
+        min-height: 120px;
+        padding: 20px 10px;
+      }
+    }
+    /* ===========================
+       Hero Heading Styles
+    ============================ */
+    .hero-heading {
+      font-size: 3rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 36px;
+      color: #222;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 16px #e2100615, 0 1px 0 #fff;
+    }
+    .hero-heading::after {
+      content: '';
+      display: block;
+      margin: 18px auto 0 auto;
+      width: 120px;
+      height: 5px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #e21006 40%, #ffd700 100%);
+      opacity: 0.85;
+    }
+    @media (max-width: 700px) {
+      .hero-heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .hero-heading::after {
+        width: 70px;
+        height: 3px;
+        margin-top: 10px;
+      }
+    }
+    .hero-description {
+      font-size: 1.25rem;
+      font-family: 'Rubik', sans-serif;
+      color: #222;
+      text-align: center;
+      margin: 0 auto 48px auto;
+      max-width: 1100px;
+      line-height: 1.7;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      padding: 0 10px;
+    }
+    @media (max-width: 700px) {
+      .hero-description {
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+    }
   </style>
 </head>
 
@@ -439,20 +704,20 @@
        Main Content Placeholder
   ============================ -->
   <main style="padding: 60px 80px;">
-    <h1 style="font-size: 2rem; text-align:center; margin-bottom: 28px;">Welcome to Shree Sainath Packaging</h1>
+    <h1 class="hero-heading">Welcome to Shree Sainath Packaging</h1>
     <!-- Slideshow Start -->
     <div class="slideshow-container">
       <div class="slide fade zoom">
         <img src="./assets/company_images/image1.jpeg" alt="Factory Image 1" />
-        <div class="slide-caption">Sample text for image 1</div>
+        <div class="slide-caption">Precision-driven packaging, crafted with expertise and dedication.</div>
       </div>
       <div class="slide fade zoom">
         <img src="./assets/company_images/image2.jpeg" alt="Factory Image 2" />
-        <div class="slide-caption">Sample text for image 2</div>
+        <div class="slide-caption">Advanced machinery ensuring high-quality, consistent packaging output.</div>
       </div>
       <div class="slide fade zoom">
         <img src="./assets/company_images/image3.jpeg" alt="Factory Image 3" />
-        <div class="slide-caption">Sample text for image 3</div>
+        <div class="slide-caption">High-speed printing for customized packaging that speaks your brand.</div>
       </div>
       <div class="slideshow-dots">
         <span class="dot"></span>
@@ -461,8 +726,62 @@
       </div>
     </div>
     <!-- Slideshow End -->
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsam voluptatem soluta possimus dolores totam a dignissimos rem! Dolor iste sit amet praesentium a magni minima voluptatibus. Ipsam, illum non!</p>
+    <p class="hero-description">We are a leading provider of custom and industrial packaging solutions, committed to helping businesses protect, present, and deliver their products with confidence. With a focus on innovation, eco-friendliness, and customer satisfaction, we offer a wide range of packaging options tailored to your unique needs. Whether you're a startup or an established enterprise, our promise is simple: durable packaging, timely delivery, and service you can trust.</p>
   </main>
+
+  <!-- ===========================
+       Why Us Section (Fade Up on Scroll)
+  ============================ -->
+  <section id="why-us-section" class="why-us-section">
+    <h2 class="why-us-title">Why Shree Sainath Packaging?</h2>
+    <div class="why-us-grid">
+      <div class="why-us-box">
+        <div class="why-us-icon"><i class="bi bi-award"></i></div>
+        <div class="why-us-heading">18+ Years</div>
+        <div class="why-us-desc">of Experience</div>
+      </div>
+      <div class="why-us-box">
+        <div class="why-us-icon"><i class="bi bi-heart-pulse"></i></div>
+        <div class="why-us-heading">18+ Years</div>
+        <div class="why-us-desc">of Trust</div>
+      </div>
+      <div class="why-us-box">
+        <div class="why-us-icon"><i class="bi bi-boxes"></i></div>
+        <div class="why-us-heading">Masters in Packaging Variety</div>
+        <div class="why-us-desc">Expertise in Diverse Packaging Solutions</div>
+      </div>
+      <div class="why-us-box">
+        <div class="why-us-icon"><i class="bi bi-gender-female"></i></div>
+        <div class="why-us-heading">Women Empowerment</div>
+        <div class="why-us-desc">Providing Employment Opportunities to Women</div>
+      </div>
+      <div class="why-us-box">
+        <div class="why-us-icon"><i class="bi bi-people"></i></div>
+        <div class="why-us-heading">100+ Clients</div>
+        <div class="why-us-desc">Across India</div>
+      </div>
+      <div class="why-us-box">
+        <div class="why-us-icon"><i class="bi bi-shield-check"></i></div>
+        <div class="why-us-heading">Quality Assurance</div>
+        <div class="why-us-desc">Consistent, Reliable Quality</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       Our Partners Section (Similar Style)
+  ============================ -->
+  <section id="partners-section" class="partners-section">
+    <h2 class="partners-title">Our Partners</h2>
+    <div class="partners-grid">
+      <div class="partner-box"><img src="./assets/partner_images/duroflex.png" alt="Duroflex Logo" style="height:48px;max-width:120px;object-fit:contain;margin-bottom:18px;"><div class="partner-name">Duroflex</div></div>
+      <div class="partner-box"><img src="./assets/partner_images/coromandel.png" alt="Coromandel Logo" style="height:48px;max-width:120px;object-fit:contain;margin-bottom:18px;"><div class="partner-name">Coromandel</div></div>
+      <div class="partner-box"><img src="./assets/partner_images/khaitan_chemicals.png" alt="Khaitan Chemicals & Fertilizers Limited Logo" style="height:48px;max-width:120px;object-fit:contain;margin-bottom:18px;"><div class="partner-name">Khaitan Chemicals & Fertilizers Limited</div></div>
+      <div class="partner-box"><img src="./assets/partner_images/apsara_tea.jpeg" alt="Apsara Tea Logo" style="height:48px;max-width:120px;object-fit:contain;margin-bottom:18px;"><div class="partner-name">Apsara Tea</div></div>
+      <div class="partner-box"><i class="bi bi-building" style="font-size: 48px; color: #e21006; margin-bottom:18px;"></i><div class="partner-name">Sarthak Enterprises</div></div>
+      <div class="partner-box"><img src="./assets/partner_images/DCM_Shriram.png" alt="DCM Shriram Ltd. Logo" style="height:48px;max-width:120px;object-fit:contain;margin-bottom:18px;"><div class="partner-name">DCM Shriram Ltd.</div></div>
+    </div>
+  </section>
 
   <!-- ===========================
        Footer Section
@@ -538,7 +857,7 @@
 
     function startSlideshow() {
       showSlide(slideIndex);
-      slideInterval = setInterval(nextSlide, 2000);
+      slideInterval = setInterval(nextSlide, 3500);
     }
 
     // Dot click navigation
@@ -547,12 +866,46 @@
         clearInterval(slideInterval);
         slideIndex = i;
         showSlide(slideIndex);
-        slideInterval = setInterval(nextSlide, 2000);
+        slideInterval = setInterval(nextSlide, 3500);
       });
     });
 
     // Start slideshow on page load
     window.addEventListener('DOMContentLoaded', startSlideshow);
+
+    // ===========================
+    // Why Us Section Fade Up on Scroll
+    // ===========================
+    const whyUsSection = document.getElementById('why-us-section');
+    const observerOptions = {
+      root: null,
+      threshold: 0.1, // 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    observer.observe(whyUsSection);
+
+    // ===========================
+    // Partners Section Fade Up on Scroll
+    // ===========================
+    const partnersSection = document.getElementById('partners-section');
+    if (partnersSection) {
+      const partnersObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { root: null, threshold: 0.1 });
+      partnersObserver.observe(partnersSection);
+    }
   </script>
 </body>
 
