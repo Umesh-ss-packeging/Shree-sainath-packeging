@@ -477,6 +477,10 @@
     </div>
   </main>
 
+  <div style="text-align:center; color:#666; font-size:1.05em; margin-bottom: 30px;">
+    <em>These are just sample images. Designs are customizable.</em>
+  </div>
+
   <!-- Modal -->
   <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -486,9 +490,27 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Thank you for your interest! Please contact us via:</p>
-          <p><strong>Phone:</strong> <a href="tel:+919826071684">+91 98260 71684</a></p>
-          <p><strong>Email:</strong> <a href="mailto:shreesainathpackaging722@gmail.com">shreesainathpackaging722@gmail.com</a></p>
+          <form id="whatsappForm">
+            <div class="mb-3 text-start">
+              <label for="quantity" class="form-label">Quantity</label>
+              <input type="number" class="form-control" id="quantity" name="quantity" min="1" required>
+            </div>
+            <div class="mb-3 text-start">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3 text-start">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10,}" required>
+            </div>
+            <div class="mb-3 text-start">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-buy">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -539,6 +561,18 @@
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
       });
+    });
+
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const quantity = document.getElementById('quantity').value;
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const city = document.getElementById('city').value;
+      alert('We are redirecting you to WhatsApp. Kindly send the enquiry there.');
+      const message = `New Product Inquiry:%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ACity: ${encodeURIComponent(city)}%0AQuantity: ${encodeURIComponent(quantity)}`;
+      const whatsappUrl = `https://wa.me/917049780160?text=${message}`;
+      window.open(whatsappUrl, '_blank');
     });
   </script>
 </body>
