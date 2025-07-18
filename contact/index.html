@@ -606,6 +606,59 @@
     .hamburger.active .hamburger-line:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
+    /* Web Developers Modal Styles */
+    .web-dev-modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+    }
+    .web-dev-modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 32px 24px 24px 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90vw;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      position: relative;
+      text-align: left;
+      animation: fadeInCard 0.5s;
+    }
+    .web-dev-modal-close {
+      color: #aaa;
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .web-dev-modal-close:hover {
+      color: var(--brown);
+    }
+    .web-dev-list {
+      margin-top: 1.5em;
+    }
+    .web-dev-item a {
+      color: var(--brown);
+      text-decoration: underline;
+      font-size: 1.05em;
+    }
+    .web-dev-item a:hover {
+      color: var(--brown-dark);
+    }
+    .web-dev-item strong {
+      color: var(--brown);
+    }
   </style>
 </head>
 <body>
@@ -677,6 +730,25 @@
           </div>
           <div class="established">Established in 2007</div>
           <a href="../assets/company brochure ss packaging.docx" download class="brochure-link">Company Brochure</a>
+          <!-- Web Developers Info Link -->
+          <button type="button" class="web-dev-info-link" id="webDevInfoBtn" style="margin-top: 1em; font-size: 1.1rem; color: var(--white); background: none; border: none; text-decoration: underline; cursor: pointer; text-align: left; width: 100%;">Web Developers Info</button>
+          <!-- Modal -->
+          <div id="webDevModal" class="web-dev-modal" style="display:none;">
+            <div class="web-dev-modal-content">
+              <span class="web-dev-modal-close" id="webDevModalClose">&times;</span>
+              <h2 style="color: var(--brown); margin-top: 0;">Web Developers</h2>
+              <div class="web-dev-list">
+                <div class="web-dev-item">
+                  <strong>Arya Sharma</strong><br>
+                  <a href="https://www.linkedin.com/in/arya-sharma-1963b030a/" target="_blank" rel="noopener">@LinkedIn</a>
+                </div>
+                <div class="web-dev-item" style="margin-top: 1em;">
+                  <strong>Charvi Joshi</strong><br>
+                  <a href="https://www.linkedin.com/in/charvi-joshi-615a23325/" target="_blank" rel="noopener">@LinkedIn</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- =========================
@@ -798,6 +870,22 @@ ${name}`;
       input.addEventListener('input', function() {
         input.style.boxShadow = '';
       });
+    });
+
+    // Web Developers Info Modal functionality
+    const webDevBtn = document.getElementById('webDevInfoBtn');
+    const webDevModal = document.getElementById('webDevModal');
+    const webDevModalClose = document.getElementById('webDevModalClose');
+    webDevBtn.addEventListener('click', function() {
+      webDevModal.style.display = 'block';
+    });
+    webDevModalClose.addEventListener('click', function() {
+      webDevModal.style.display = 'none';
+    });
+    window.addEventListener('click', function(event) {
+      if (event.target === webDevModal) {
+        webDevModal.style.display = 'none';
+      }
     });
   </script>
 </body>
