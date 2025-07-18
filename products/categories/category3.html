@@ -440,7 +440,7 @@ White Plain Woven Sacks -->
               <p class="card-text">Short product description goes here.</p>
             </div>
             <div class="text-center mt-3">
-              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
+              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="30kg Polypropylene Woven Sack Bag">Buy Now</button>
             </div>
           </div>
         </div>
@@ -456,7 +456,7 @@ White Plain Woven Sacks -->
               <p class="card-text">Short product description goes here.</p>
             </div>
             <div class="text-center mt-3">
-              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
+              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="50kg Packaging Woven Sacks Bag">Buy Now</button>
             </div>
           </div>
         </div>
@@ -471,7 +471,7 @@ White Plain Woven Sacks -->
               <p class="card-text">Short product description goes here.</p>
             </div>
             <div class="text-center mt-3">
-              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
+              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="40Kg Laminated Woven Sack">Buy Now</button>
             </div>
           </div>
         </div>
@@ -486,7 +486,7 @@ White Plain Woven Sacks -->
               <p class="card-text">Short product description goes here.</p>
             </div>
             <div class="text-center mt-3">
-              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
+              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="50kg Polypropylene Woven Sacks">Buy Now</button>
             </div>
           </div>
         </div>
@@ -501,7 +501,7 @@ White Plain Woven Sacks -->
               <p class="card-text">Short product description goes here.</p>
             </div>
             <div class="text-center mt-3">
-              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
+              <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="White Plain Woven Sacks">Buy Now</button>
             </div>
           </div>
         </div>
@@ -520,6 +520,7 @@ White Plain Woven Sacks -->
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <div id="selectedProductName" style="font-weight:600; margin-bottom:15px;"></div>
           <form id="whatsappForm">
             <div class="mb-3 text-start">
               <label for="quantity" class="form-label">Quantity</label>
@@ -595,6 +596,20 @@ White Plain Woven Sacks -->
       });
     });
 
+    // ===========================
+    // Product Selection for Modal
+    // ===========================
+    let selectedProduct = "";
+    document.querySelectorAll('.btn-buy[data-product]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        selectedProduct = this.getAttribute('data-product');
+        document.getElementById('selectedProductName').textContent = selectedProduct;
+      });
+    });
+
+    // ===========================
+    // WhatsApp Form Submission
+    // ===========================
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const quantity = document.getElementById('quantity').value;
@@ -602,7 +617,7 @@ White Plain Woven Sacks -->
       const phone = document.getElementById('phone').value;
       const city = document.getElementById('city').value;
       alert('We are redirecting you to WhatsApp. Kindly send the enquiry there.');
-      const message = `New Product Inquiry:%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ACity: ${encodeURIComponent(city)}%0AQuantity: ${encodeURIComponent(quantity)}`;
+      const message = `New Product Inquiry:%0AProduct: ${encodeURIComponent(selectedProduct)}%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ACity: ${encodeURIComponent(city)}%0AQuantity: ${encodeURIComponent(quantity)}`;
       const whatsappUrl = `https://wa.me/917049780160?text=${message}`;
       window.open(whatsappUrl, '_blank');
     });
