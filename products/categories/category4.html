@@ -318,6 +318,34 @@
       font-family: 'Rubik', sans-serif;
     }
 
+    .card-price {
+      font-weight: 600;
+      color: #e21006;
+      margin-bottom: 8px;
+      font-size: 1.25em;
+    }
+
+    .product-details-btn {
+      background: #fff;
+      color: #e21006;
+      border: 1.5px solid #e21006;
+      border-radius: 10px;
+      padding: 6px 20px;
+      font-size: 1em;
+      font-weight: 500;
+      box-shadow: none;
+      transition: background 0.3s, color 0.3s, border 0.3s, transform 0.2s;
+      margin-bottom: 10px;
+      outline: none;
+      display: inline-block;
+    }
+    .product-details-btn:hover, .product-details-btn:focus {
+      background: #e21006;
+      color: #fff;
+      border: 1.5px solid #e21006;
+      transform: translateY(-2px) scale(1.04);
+    }
+
     @media (max-width: 768px) {
       main {
         padding: 60px 10px 0 10px;
@@ -429,7 +457,8 @@
           <div class="card-body">
             <div>
               <h5 class="card-title">15kg Flexo Printed Woven Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal1">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 12/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="15kg Flexo Printed Woven Bag">Buy Now</button>
@@ -473,6 +502,31 @@
               <button type="submit" class="btn btn-buy">Submit</button>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 15kg Flexo Printed Woven Bag -->
+  <div class="modal fade" id="detailsModal1" tabindex="-1" aria-labelledby="detailsModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel1">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>15 kg</td></tr>
+              <tr><th>Size</th><td>22x34 Inch</td></tr>
+              <tr><th>Usage/Application</th><td>Packaging</td></tr>
+              <tr><th>Color</th><td>Brown</td></tr>
+              <tr><th>Material</th><td>Woven</td></tr>
+              <tr><th>Shape</th><td>Rectangular</td></tr>
+              <tr><th>Print Type</th><td>Flexo Print</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

@@ -322,6 +322,34 @@ White Plain Woven Sacks -->
       font-family: 'Rubik', sans-serif;
     }
 
+    .card-price {
+      font-weight: 600;
+      color: #e21006;
+      margin-bottom: 8px;
+      font-size: 1.25em;
+    }
+
+    .product-details-btn {
+      background: #fff;
+      color: #e21006;
+      border: 1.5px solid #e21006;
+      border-radius: 10px;
+      padding: 6px 20px;
+      font-size: 1em;
+      font-weight: 500;
+      box-shadow: none;
+      transition: background 0.3s, color 0.3s, border 0.3s, transform 0.2s;
+      margin-bottom: 10px;
+      outline: none;
+      display: inline-block;
+    }
+    .product-details-btn:hover, .product-details-btn:focus {
+      background: #e21006;
+      color: #fff;
+      border: 1.5px solid #e21006;
+      transform: translateY(-2px) scale(1.04);
+    }
+
     @media (max-width: 768px) {
       main {
         padding: 60px 10px 0 10px;
@@ -437,7 +465,8 @@ White Plain Woven Sacks -->
           <div class="card-body">
             <div>
               <h5 class="card-title">30kg Polypropylene Woven Sack Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal1">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 8.50/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="30kg Polypropylene Woven Sack Bag">Buy Now</button>
@@ -453,7 +482,8 @@ White Plain Woven Sacks -->
           <div class="card-body">
             <div>
               <h5 class="card-title">50kg Packaging Woven Sacks Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal2">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 8.50/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="50kg Packaging Woven Sacks Bag">Buy Now</button>
@@ -468,7 +498,8 @@ White Plain Woven Sacks -->
           <div class="card-body">
             <div>
               <h5 class="card-title">40Kg Laminated Woven Sack</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal3">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 8.50/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="40Kg Laminated Woven Sack">Buy Now</button>
@@ -482,8 +513,9 @@ White Plain Woven Sacks -->
           <img src="../../assets/category images/Woven_Sack_Bags/50kg Polypropylene Woven Sacks.jpg" class="card-img-top" alt="Product Image">
           <div class="card-body">
             <div>
-              <h5 class="card-title">50kg Polypropylene Woven Sacks </h5>
-              <p class="card-text">Short product description goes here.</p>
+              <h5 class="card-title">50kg Polypropylene Woven Sacks</h5>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal4">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 8.50/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="50kg Polypropylene Woven Sacks">Buy Now</button>
@@ -498,7 +530,8 @@ White Plain Woven Sacks -->
           <div class="card-body">
             <div>
               <h5 class="card-title">White Plain Woven Sacks</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal5">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 8/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="White Plain Woven Sacks">Buy Now</button>
@@ -542,6 +575,130 @@ White Plain Woven Sacks -->
               <button type="submit" class="btn btn-buy">Submit</button>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 30kg Polypropylene Woven Sack Bag -->
+  <div class="modal fade" id="detailsModal1" tabindex="-1" aria-labelledby="detailsModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel1">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>30 kg</td></tr>
+              <tr><th>Usage/Application</th><td>Packaging</td></tr>
+              <tr><th>Color</th><td>White</td></tr>
+              <tr><th>Material</th><td>Polypropylene Woven</td></tr>
+              <tr><th>Shape</th><td>Rectangular</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Size</th><td>34X28 Inches</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 50kg Packaging Woven Sacks Bag -->
+  <div class="modal fade" id="detailsModal2" tabindex="-1" aria-labelledby="detailsModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel2">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>50 kg</td></tr>
+              <tr><th>Color</th><td>White</td></tr>
+              <tr><th>Type</th><td>Laminated Sack</td></tr>
+              <tr><th>Usage/ Application</th><td>Packaging</td></tr>
+              <tr><th>Pattern</th><td>Plain</td></tr>
+              <tr><th>Bag Material</th><td>Woven</td></tr>
+              <tr><th>Size</th><td>32X28 Inches</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 40Kg Laminated Woven Sack -->
+  <div class="modal fade" id="detailsModal3" tabindex="-1" aria-labelledby="detailsModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel3">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>40 Kg</td></tr>
+              <tr><th>Color</th><td>White</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Usage/Application</th><td>Packaging</td></tr>
+              <tr><th>Printing</th><td>Flexographic</td></tr>
+              <tr><th>Finish</th><td>Laminated</td></tr>
+              <tr><th>Size</th><td>34x26 inches</td></tr>
+              <tr><th>Material</th><td>Woven</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 50kg Polypropylene Woven Sacks -->
+  <div class="modal fade" id="detailsModal4" tabindex="-1" aria-labelledby="detailsModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel4">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>50 kg</td></tr>
+              <tr><th>Material</th><td>Polypropylene Woven</td></tr>
+              <tr><th>Usage</th><td>Packaging</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Color</th><td>White</td></tr>
+              <tr><th>Size</th><td>30X26 Inches</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: White Plain Woven Sacks -->
+  <div class="modal fade" id="detailsModal5" tabindex="-1" aria-labelledby="detailsModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel5">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>50 kg</td></tr>
+              <tr><th>Material</th><td>Woven</td></tr>
+              <tr><th>Usage</th><td>Packaging</td></tr>
+              <tr><th>Size</th><td>30X28 Inches</td></tr>
+              <tr><th>Color</th><td>White</td></tr>
+              <tr><th>Pattern</th><td>Plain</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

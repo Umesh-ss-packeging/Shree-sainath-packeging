@@ -311,6 +311,34 @@
       font-family: 'Rubik', sans-serif;
     }
 
+    .card-price {
+      font-weight: 600;
+      color: #e21006;
+      margin-bottom: 8px;
+      font-size: 1.25em;
+    }
+
+    .product-details-btn {
+      background: #fff;
+      color: #e21006;
+      border: 1.5px solid #e21006;
+      border-radius: 10px;
+      padding: 6px 20px;
+      font-size: 1em;
+      font-weight: 500;
+      box-shadow: none;
+      transition: background 0.3s, color 0.3s, border 0.3s, transform 0.2s;
+      margin-bottom: 10px;
+      outline: none;
+      display: inline-block;
+    }
+    .product-details-btn:hover, .product-details-btn:focus {
+      background: #e21006;
+      color: #fff;
+      border: 1.5px solid #e21006;
+      transform: translateY(-2px) scale(1.04);
+    }
+
     @media (max-width: 768px) {
       main {
         padding: 60px 10px 0 10px;
@@ -428,7 +456,8 @@ Printed BOPP Bag
           <div class="card-body">
             <div>
               <h5 class="card-title">10 Kg Printed BOPP Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal1">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 11/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="10 Kg Printed BOPP Bag">Buy Now</button>
@@ -444,7 +473,8 @@ Printed BOPP Bag
           <div class="card-body">
             <div>
               <h5 class="card-title">10Kg Loop Handle Printed BOPP Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal2">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 11/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="10Kg Loop Handle Printed BOPP Bag">Buy Now</button>
@@ -459,7 +489,8 @@ Printed BOPP Bag
           <div class="card-body">
             <div>
               <h5 class="card-title">25Kg Printed BOPP Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal3">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 11/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="25Kg Printed BOPP Bag">Buy Now</button>
@@ -474,7 +505,8 @@ Printed BOPP Bag
           <div class="card-body">
             <div>
               <h5 class="card-title">Printed BOPP Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal4">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 11/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="Printed BOPP Bag">Buy Now</button>
@@ -489,7 +521,8 @@ Printed BOPP Bag
           <div class="card-body">
             <div>
               <h5 class="card-title">5Kg Loop Handle Printed BOPP Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal5">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 11/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="5Kg Loop Handle Printed BOPP Bag">Buy Now</button>
@@ -504,7 +537,8 @@ Printed BOPP Bag
           <div class="card-body">
             <div>
               <h5 class="card-title">25Kg Printed BOPP Laminated Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal6">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 15/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="25Kg Printed BOPP Laminated Bag">Buy Now</button>
@@ -519,7 +553,8 @@ Printed BOPP Bag
           <div class="card-body">
             <div>
               <h5 class="card-title">50Kg BOPP Laminated Bag</h5>
-              <p class="card-text">Short product description goes here.</p>
+              <button class="btn product-details-btn mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal7">Product Details</button>
+              <div class="card-price" style="font-weight:600; color:#e21006; margin-bottom:8px;">₹ 11/Piece</div>
             </div>
             <div class="text-center mt-3">
               <button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#buyModal" data-product="50Kg BOPP Laminated Bag">Buy Now</button>
@@ -569,6 +604,174 @@ Printed BOPP Bag
               <button type="submit" class="btn btn-buy">Submit</button>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details -->
+  <div class="modal fade" id="detailsModal1" tabindex="-1" aria-labelledby="detailsModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel1">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>10 Kg</td></tr>
+              <tr><th>Usage/Application</th><td>Seed and Pulses Packaging</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Material</th><td>BOPP</td></tr>
+              <tr><th>Size (in inches)</th><td>18X12 Inches</td></tr>
+              <tr><th>Handle Type</th><td>Loop Handle</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 10Kg Loop Handle Printed BOPP Bag -->
+  <div class="modal fade" id="detailsModal2" tabindex="-1" aria-labelledby="detailsModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel2">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>10 Kg</td></tr>
+              <tr><th>Usage/Application</th><td>Seed and Pulses Packaging</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Size (in inches)</th><td>22X16 Inches</td></tr>
+              <tr><th>Material</th><td>BOPP</td></tr>
+              <tr><th>Handle Type</th><td>Loop Handle</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 25Kg Printed BOPP Bag -->
+  <div class="modal fade" id="detailsModal3" tabindex="-1" aria-labelledby="detailsModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel3">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>25 Kg</td></tr>
+              <tr><th>Usage/Application</th><td>Seed and Pulses Packaging</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Size (in inches)</th><td>26X22 Inches</td></tr>
+              <tr><th>Material</th><td>BOPP</td></tr>
+              <tr><th>Handle Type</th><td>Loop Handle</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: Printed BOPP Bag -->
+  <div class="modal fade" id="detailsModal4" tabindex="-1" aria-labelledby="detailsModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel4">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>10 Kg</td></tr>
+              <tr><th>Usage/Application</th><td>Seed and Pulses Packaging</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Material</th><td>BOPP</td></tr>
+              <tr><th>Size (in inches)</th><td>20X14 Inches</td></tr>
+              <tr><th>Handle Type</th><td>Loop Handle</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 5Kg Loop Handle Printed BOPP Bag -->
+  <div class="modal fade" id="detailsModal5" tabindex="-1" aria-labelledby="detailsModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel5">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>5 Kg</td></tr>
+              <tr><th>Usage/Application</th><td>Seed and Pulses Packaging</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Material</th><td>BOPP</td></tr>
+              <tr><th>Size (in inches)</th><td>18X12 Inches</td></tr>
+              <tr><th>Handle Type</th><td>Loop Handle</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 25Kg Printed BOPP Laminated Bag -->
+  <div class="modal fade" id="detailsModal6" tabindex="-1" aria-labelledby="detailsModalLabel6" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel6">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>25 Kg</td></tr>
+              <tr><th>Material</th><td>BOPP</td></tr>
+              <tr><th>Printing</th><td>Offset</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Usage</th><td>Packaging</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Product Details: 50Kg BOPP Laminated Bag -->
+  <div class="modal fade" id="detailsModal7" tabindex="-1" aria-labelledby="detailsModalLabel7" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel7">Product Description</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Capacity</th><td>50 Kg</td></tr>
+              <tr><th>Material</th><td>BOPP</td></tr>
+              <tr><th>Pattern</th><td>Printed</td></tr>
+              <tr><th>Printing</th><td>Flexographic</td></tr>
+              <tr><th>Property</th><td>Laminated</td></tr>
+              <tr><th>Size</th><td>18X12 Inches</td></tr>
+              <tr><th>Usage</th><td>Packaging</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
